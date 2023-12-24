@@ -2,15 +2,16 @@ import './App.css'
 import React, { useState } from 'react';
 import Product from './components/Product';
 import ProductDetails from './components/ProductDetails';
+import ProductContainer from './components/ProductContainer';
 
 
 const App = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const products = [
-    { id: 1, name: 'محصول 1', price: 100, description: 'توضیحات محصول 1' },
-    { id: 2, name: 'محصول 2', price: 150, description: 'توضیحات محصول 2' },
-    { id: 3, name: 'محصول 3', price: 200, description: 'توضیحات محصول 3' },
+    { id: 1, name: ' Galaxy S23 Ultraگوشی موبایل سامسونگ مدل ', price: 47000000, description: 'سامسونگ Galaxy S23 Ultra به‌عنوان گل سرسبد گوشی‌های هوشمند خانواده S23 با بهره بردن از مشخصات فنی قدرتمند معرفی شد. در نگاه اول از نظر طراحی در نظر گرفته شده، سامسونگ Galaxy S23 Ultra به نسبت نسل قبلی یعنی Galaxy S22 Ultra تغییرات زیادی نداشته و تقریبا هر دو گوشی از طراحی مشابهی بهره بردند. اما باید بدانید که Galaxy S23 Ultra به نسبت نسل قبلی، قدرتمند‌تر از همیشه وارد میدان رقابت شده است. در نمای رو‌به‌رویی این گوشی به صفحه‌نمایش شگفت‌انگیز با ابعاد 6.8 اینچ و رزولوشن 1440×3088 پیکسل از نوع Dynamic AMOLED 2X مجهز شده.' , img : "https://dkstatics-public.digikala.com/digikala-products/ebe1b2041a76fda30ce7b8870ddfd627f5affa2a_1681800756.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"  },
+    { id: 2, name: ' Tune Flex هدفون بلوتوثی جی بی ال مدل ', price: 4150000, description: 'کمترین حواس‌پرتی در حین گوش دادن به موسیقی و پادکست را می‌توانید با هدفون بی‌سیم جی بی ال مدل Tune Flex تجربه کنید. محبوبیت این هدفون در بین خریداران به عوامل زیادی وابسته است که ازجمله مهم‌ترین آن‌ها می‌توان به فناوری نویزکنسلینگ و باتری قوی این دستگاه اشاره کرد. همچنین این هدفون دارای گزینه Ambient است که با انتخاب آن می‌توانید نویزکنسلینگ را خاموش کنید و به صدای محیط گوش دهید. هدفون بی‌سیم جی بی ال به کمک محفظه شارژ خود تا بیش از 24 ساعت شارژ را نگه می‌دارد و همچنین فقط با 10 دقیقه شارژ می‌توانید به مدت 2 ساعت کامل از آن استفاده کنید.' ,img : "https://dkstatics-public.digikala.com/digikala-products/516a28028980b39c337e9d243b88dab74891cce4_1666616488.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" },
+    { id: 3, name: 'ROG Strix G513IE-HN060 لپ تاپ ایسوس ', price: 47000000, description: 'لپ ‌تاپ ROG Strix G513IE-HN060 از محصولات شرکت «ایسوس» محسوب می‌شود که با طراحی زیبا روانه بازار شده است. بدنه‌ شیک ROG Strix G513IE-HN060 به‌ گونه‌ای طراحی شده که لپ‌ تاپی رده ‌بالا را نوید می‌‌دهد. این لپ تاپ و 2.1 کیلوگرم وزن دارد و برای جا‌به‌‌جایی دائمی آن مشکل خاصی نخواهید داشت. صفحه ‌نمایش 15.6 اینچی این محصول دارای وضوح تصویر FullHD است. پورت‌های USB و HDMI روی لبه ‌های این مدل از ایسوس دیده می‌‌شود که با استفاده از آن‌‌ها می‌توان انواع ابزارهای جانبی را بدون نیاز به هیچ مبدلی به این لپ‌ تاپ متصل و از آن ‌ها استفاده کرد.' , img : "https://dkstatics-public.digikala.com/digikala-products/100a7a48d28380073f4613703af80542e58e86c5_1669710900.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"},
   ];
 
   const handleProductClick = (product) => {
@@ -19,13 +20,13 @@ const App = () => {
 
   return (
     <div className='Main'>
-      <div >
-        <h2>لیست محصولات</h2>
+      <ProductDetails selectedProduct={selectedProduct} />
+      <ProductContainer>
+        <h2 className='h2pro'>لیست محصولات</h2>
         {products.map((product) => (
           <Product key={product.id} product={product} onProductClick={handleProductClick} />
         ))}
-      </div>
-      <ProductDetails selectedProduct={selectedProduct} />
+       </ProductContainer>  
     </div>
   );
 };
