@@ -1,24 +1,35 @@
 .Main{
   width: 80%;
   height: auto;
-  background-color: cadetblue;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
 
 
 }
-
  #root {
+   display: flex;
+   justify-content: center;
+   align-items: center; 
   width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: royalblue;
+  background: rgba( 111, 163, 223, 0.2 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 7px );
+-webkit-backdrop-filter: blur( 7px );
+border-radius: 10px;
+color:antiquewhite;
 
 }
 .ProductContainer{
-background-color: #fff;
+  background: rgba( 5, 5, 5, 0.85 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 0px );
+  -webkit-backdrop-filter: blur( 0px );
+  border-radius: 10px;
+ 
 width: 31%;
 height: auto;
 
@@ -33,20 +44,31 @@ height: auto;
   height: 100px;
 }
 .ProductDetail{
-  background-color: #fff;
+  background: rgba( 5, 5, 5, 0.85 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 0px );
+  -webkit-backdrop-filter: blur( 0px );
+  border-radius: 10px;
   width: 70%;
   height: auto;
-  border: 3px solid red;
+
   border-radius: 6px;
   padding-right: 5px;
 }
 .Product{
-  border: 1px solid red;
+
   border-radius: 6px;
   height: 200px;
   width: 98%;
   font-size: 18px;
   align-items: center;
+
+  background: rgba( 0, 0, 0, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .h2pro{
   
